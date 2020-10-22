@@ -29,7 +29,6 @@ export const AuthProvider: React.FC = ({children}) => {
   useEffect(() => {
     async function loadUserData() {
       const [user, token] = await AsyncStorage.multiGet(['@Project:cred', '@Piupiwer:token']);
-      console.log(user);
 
       if(user[1] && token[1]){
         api.defaults.headers.Authorization = `JWT ${token}`;
@@ -64,20 +63,12 @@ export const AuthProvider: React.FC = ({children}) => {
       };
     },[api, setData]);
 
-    const LogOut = () => {
-      AsyncStorage.removeItem('@Project:user');
-      AsyncStorage.removeItem('@Project:token');
-    }
+    const LogOut = useCallback(() => {
+       AsyncStorage.removeItem('@Project:user');
+       AsyncStorage.removeItem('@Project:token');
 
-  // const SignIn = useCallback(async (cred) => {
-  //   const response = await api.post('/login', cred);
-  //   const {user, token} = response.data;
-  //   await AsyncStorage.multiSet([['@Piupiuwer:cred', JSON.stringify(user)], ['token', token]]);
-
-  //   api.defaults.headers.authorization = `JWT ${token}`
-
-  //   setData(response.data);
-  // },[])
+      setData({} as AuthState);
+    },[]);
 
   return(
     <AuthContext.Provider value={{user: data.user, SignIn, LogOut, token: data.token}}>

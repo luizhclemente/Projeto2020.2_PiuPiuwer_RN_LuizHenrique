@@ -17,12 +17,10 @@ const { Navigator, Screen } = createStackNavigator();
 
 function AppStack() {
   return (
-    // <NavigationContainer>
       <Navigator screenOptions={{ headerShown: false, }} initialRouteName="Login">
         <Screen name="AppTabs" component={AppTabs} />
         <Screen name="WritePiu" component={WritePiu} />
       </Navigator>
-    // </NavigationContainer>
   )
 }
 

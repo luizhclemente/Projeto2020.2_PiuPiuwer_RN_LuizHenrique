@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, SafeAreaView } from 'react-native';
 import Login from './src/pages/Login';
 import { AppLoading } from 'expo'
 
@@ -28,10 +28,12 @@ export default function App() {
     return <AppLoading />;
   } else {
     return (
+      <SafeAreaView style={{flex: 1}}>
         <AppProvider>
           <Routes />
           <StatusBar style="auto" />
         </AppProvider>
+      </SafeAreaView>
     );
   };
 }

@@ -3,10 +3,11 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import { View, Image } from 'react-native';
 import {formatDistance} from 'date-fns';
+import { Feather, AntDesign } from '@expo/vector-icons';
+
 
 // styled components
 import { 
-  IconsPiu,
   InfoUserContainer, 
   LikeBtnContainer, 
   PiuContentContainer, 
@@ -119,22 +120,26 @@ const Piu: React.FC<PiuItemProps> = ({ piuData }) => {
 
           <PiuIconsContainer>
             <TouchableOpacity>
-              <IconsPiu source={ReplyIcon}/>
+              <Feather name="message-square" size={18} color="black" />
             </TouchableOpacity>
             
               <TouchableOpacity onPress={likePiu}>
                 <LikeBtnContainer>
-                  <IconsPiu source={usuarioDeuLike ? SelectedLikeIcon : LikeIcon}/>
+                  {
+                    usuarioDeuLike ? 
+                    <AntDesign name="heart" size={18} color="#FB4C64" /> :
+                    <Feather name="heart" size={18} color='black' />  
+                  }
                   <TextLike>{likes.length}</TextLike>
                 </LikeBtnContainer>
               </TouchableOpacity>
 
             <TouchableOpacity>
-              <IconsPiu source={FavoriteIcon}/>
+              <Feather name="star" size={18} color="black" /> 
             </TouchableOpacity>
 
             <TouchableOpacity onPress={deletePiu}>
-              <IconsPiu source={TrashIcon}/>  
+              <Feather name="trash-2" size={18} color="black" /> 
             </TouchableOpacity>
           </PiuIconsContainer>
         </PiuContentContainer>

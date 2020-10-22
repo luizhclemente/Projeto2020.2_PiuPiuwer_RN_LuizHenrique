@@ -25,7 +25,8 @@ function Feed() {
   const delay = useCallback(
     (delay: number) => new Promise(res => setTimeout(res, delay)
     ), []);
-    const {LogOut, user} = useAuth();
+  
+  const {LogOut, user} = useAuth();
 
   const handleFeedToWritePiuPage = useCallback(() =>{
     navigate('WritePiu');
@@ -33,8 +34,7 @@ function Feed() {
 
   const handleLogOut = useCallback(() => {
     LogOut();
-    navigate('Login');
-  },[navigate, LogOut]);
+  },[LogOut]);
 
   useEffect(() => {
     async function loadPius() {
@@ -61,13 +61,11 @@ function Feed() {
         </TouchableOpacity>
       </HeaderFeed>
 
-      {/* <PiusContainer> */}
       <ScrollPius>
         {pius.map((piuData: PiuData) => {
           return <Piu key={piuData.id} piuData={piuData} />
         })}
       </ScrollPius>
-      {/* </PiusContainer> */}
 
     </ViewFeed>
   )

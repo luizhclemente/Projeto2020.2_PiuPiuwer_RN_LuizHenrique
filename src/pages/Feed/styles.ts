@@ -13,10 +13,10 @@ export const HeaderFeed = styled.View`
 
   background: #fafafc;
   
-  padding-top: 50;
-  padding-bottom: 10;
-  padding-left: 18;
-  padding-right: 18;
+  padding-top: 50px;
+  padding-bottom: 10px;
+  padding-left: 18px;
+  padding-right: 18px;
   
   elevation: 5;
   
@@ -25,13 +25,13 @@ export const HeaderFeed = styled.View`
 `
 
 export const LogoImage = styled.Image`
-  width: 55;
-  height: 55;
+  width: 55px;
+  height: 55px;
 `
 
 export const IconsHeader = styled.Image`
-  width: 37;
-  height: 37;
+  width: 37px;
+  height: 37px;
 `
 
 export const PiusContainer = styled.View`

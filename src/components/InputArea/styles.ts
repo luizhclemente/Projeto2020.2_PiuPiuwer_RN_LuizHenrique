@@ -5,20 +5,19 @@ export const InputAreaDiv = styled.View`
   background: #D6D6D6;
   width: 70%;
   
-  border-top-left-radius: 18;
-  border-bottom-right-radius: 18;
+  border-top-left-radius: 18px;
+  border-bottom-right-radius: 18px;
   
-  margin-bottom: 10;
+  margin-bottom: 10px;
 
-  padding-left: 10;
-  padding-top: 10;
-  padding-bottom: 10;
-  padding-right: 10;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
 
-  margin-bottom: 20;
+  margin-bottom: 20px;
 
   elevation: 5;
-
 
 `
 
